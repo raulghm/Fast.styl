@@ -1,0 +1,553 @@
+// Animation
+// Background
+// Border and outline
+// Box
+// Color
+// Content Paged Media
+// Dimension
+// Flexible Box
+// Font
+// Generated content
+// Grid
+// Hyperlink
+// Linebox
+// List
+// Margin
+// Marquee
+// Multi-column
+// Padding
+// Paged Media
+// Positioning
+// Print
+// Ruby
+// Speech
+// Table
+// Text
+// 2D/3D Transform
+// Transition
+// User-interface
+
+
+// Animation
+
+//*******************//
+//      Background
+//*******************//
+
+bg(v)
+	if v == a
+		background auto
+	else if v == n
+		background none
+	else
+		background v
+
+bgi(v)	
+	if v == n
+		background-image none
+	else
+		background-image url(val)
+
+bgr(val)
+	background-repeat val
+
+bgc(val)
+	background-color val
+
+bgz(val)
+	background-size val
+
+// bg: background
+// bg+: background:${1:#fff} url(${2}) ${3:0} ${4:0} ${5:no-repeat}
+// bg:n: background:none
+// bg:ie: filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='${1:x}.png',sizingMethod='${2:crop}')
+// bgc: background-color:#${1:fff}
+// bgc:t: background-color:transparent
+// bgi: background-image:url(|)
+// bgi:n: background-image:none
+// bgr: background-repeat
+// bgr:n: background-repeat:no-repeat
+// bgr:x: background-repeat:repeat-x
+// bgr:y: background-repeat:repeat-y
+// bgr:sp: background-repeat:space
+// bgr:rd: background-repeat:round
+// bga: background-attachment
+// bga:f: background-attachment:fixed
+// bga:s: background-attachment:scroll
+// bgp: background-position:${1:0} ${2:0}
+// bgpx: background-position-x
+// bgpy: background-position-y
+// bgbk: background-break
+// bgbk:bb: background-break:bounding-box
+// bgbk:eb: background-break:each-box
+// bgbk:c: background-break:continuous
+// bgcp: background-clip:${1:padding-box}
+// bgcp:bb: background-clip:border-box
+// bgcp:pb: background-clip:padding-box
+// bgcp:cb: background-clip:content-box
+// bgcp:nc: background-clip:no-clip
+// bgo: background-origin
+// bgo:pb: background-origin:padding-box
+// bgo:bb: background-origin:border-box
+// bgo:cb: background-origin:content-box
+// bgsz: background-size
+// bgsz:a: background-size:auto
+// bgsz:ct: background-size:contain
+// bgsz:cv: background-size:cover
+
+//*******************//
+// Border and outline
+//*******************//
+
+// bd: border
+bd(val)
+	// bd:n: border:none
+	if (v == n)
+		border none
+	else
+		border val
+
+// bdt: border-top
+bdt(val)
+	border-top val
+
+// bdr: border-right
+bdr(val)
+	border-right val
+
+// bdl: border-left
+bdl(val)
+	border-left val 
+
+// bdb: border-bottom
+bdb(val)
+	border-bottom val
+
+// bdc: border-color:#${1:000}
+bdc(val)
+	border-color val
+
+// bd+: border:${1:1px} ${2:solid} ${3:#000}
+// bdbk: border-break:${1:close}
+// bdbk:c: border-break:close
+// bdcl: border-collapse
+// bdcl:c: border-collapse:collapse
+// bdcl:s: border-collapse:separate
+// bdc:t: border-color:transparent
+// bdi: border-image:url(|)
+// bdi:n: border-image:none
+// bdti: border-top-image:url(|)
+// bdti:n: border-top-image:none
+// bdri: border-right-image:url(|)
+// bdri:n: border-right-image:none
+// bdbi: border-bottom-image:url(|)
+// bdbi:n: border-bottom-image:none
+// bdli: border-left-image:url(|)
+// bdli:n: border-left-image:none
+// bdci: border-corner-image:url(|)
+// bdci:n: border-corner-image:none
+// bdci:c: border-corner-image:continue
+// bdtli: border-top-left-image:url(|)
+// bdtli:n: border-top-left-image:none
+// bdtli:c: border-top-left-image:continue
+// bdtri: border-top-right-image:url(|)
+// bdtri:n: border-top-right-image:none
+// bdtri:c: border-top-right-image:continue
+// bdbri: border-bottom-right-image:url(|)
+// bdbri:n: border-bottom-right-image:none
+// bdbri:c: border-bottom-right-image:continue
+// bdbli: border-bottom-left-image:url(|)
+// bdbli:n: border-bottom-left-image:none
+// bdbli:c: border-bottom-left-image:continue
+// bdf: border-fit:${1:repeat}
+// bdf:c: border-fit:clip
+// bdf:r: border-fit:repeat
+// bdf:sc: border-fit:scale
+// bdf:st: border-fit:stretch
+// bdf:ow: border-fit:overwrite
+// bdf:of: border-fit:overflow
+// bdf:sp: border-fit:space
+// bdl: border-length
+// bdl:a: border-length:auto
+// bdsp: border-spacing
+// bds: border-style
+// bds:n: border-style:none
+// bds:h: border-style:hidden
+// bds:dt: border-style:dotted
+// bds:ds: border-style:dashed
+// bds:s: border-style:solid
+// bds:db: border-style:double
+// bds:dtds: border-style:dot-dash
+// bds:dtdtds: border-style:dot-dot-dash
+// bds:w: border-style:wave
+// bds:g: border-style:groove
+// bds:r: border-style:ridge
+// bds:i: border-style:inset
+// bds:o: border-style:outset
+// bdw: border-width
+// bdtw: border-top-width
+// bdrw: border-right-width
+// bdbw: border-bottom-width
+// bdlw: border-left-width
+// bt: border-top
+// bdt+: border-top:${1:1px} ${2:solid} ${3:#000}
+// bdt:n: border-top:none
+// bdtw: border-top-width
+// bdts: border-top-style
+// bdts:n: border-top-style:none
+// bdtc: border-top-color:#${1:000}
+// bdtc:t: border-top-color:transparent
+// br: border-right
+// bdr+: border-right:${1:1px} ${2:solid} ${3:#000}
+// bdr:n: border-right:none
+// bdrw: border-right-width
+// bdrs: border-right-style
+// bdrs:n: border-right-style:none
+// bdrc: border-right-color:#${1:000}
+// bdrc:t: border-right-color:transparent
+// bb: border-bottom
+// bdb+: border-bottom:${1:1px} ${2:solid} ${3:#000}
+// bdb:n: border-bottom:none
+// bdbw: border-bottom-width
+// bdbs: border-bottom-style
+// bdbs:n: border-bottom-style:none
+// bdbc: border-bottom-color:#${1:000}
+// bdbc:t: border-bottom-color:transparent
+// bl: border-left
+// bdl+: border-left:${1:1px} ${2:solid} ${3:#000}
+// bdl:n: border-left:none
+// bdlw: border-left-width
+// bdls: border-left-style
+// bdls:n: border-left-style:none
+// bdlc: border-left-color:#${1:000}
+// bdlc:t: border-left-color:transparent
+// bdrs: border-radius
+// bdtrrs: border-top-right-radius
+// bdtlrs: border-top-left-radius
+// bdbrrs: border-bottom-right-radius
+// bdblrs: border-bottom-left-radius
+
+
+// Box
+
+
+//*******************//
+//      Color
+//*******************//
+
+c(v)
+	color v
+
+
+// Content Paged Media
+
+//*******************//
+//      Dimension
+//*******************//
+
+// Height
+//****************//
+
+// example:
+// h 10 // height 10px
+
+h(val)
+	unit = unit(val) == '' ? 'px' : unit(val)
+	height unit(val, unit)
+
+// Width
+//****************//
+
+// example:
+// w 10 // width 10px
+
+w(val)
+	unit = unit(val) == '' ? 'px' : unit(val)
+	width unit(val, unit)
+
+// Mixin: Size
+// Quickly and smoothly set width and height.
+// ex. size: 50px 100px => width: 50px; height: 100px
+// ex. size: 2em => width: 2em; height: 2em;
+// ex. size: 40 80 => width: 40px; height: 80px
+size(numbers...)
+	if length(numbers) > 1
+
+		width-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
+		height-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
+
+		width:  unit(numbers[0], width-unit)
+		height: unit(numbers[1], height-unit)
+	else
+
+		size-unit = unit(numbers) == '' ? 'px' : unit(numbers)
+
+		width:  unit(numbers, size-unit)
+		height: unit(numbers, size-unit)
+
+
+// Flexible Box
+
+
+//*******************//
+//      Font
+//*******************//
+
+f(val)
+	font val
+
+ff(val)
+	font-family val
+
+fw(val)
+	font-weight val
+
+fs(val)
+	font-style val
+
+fz(val)
+	font-size val
+
+
+
+// Generated content
+// Grid
+// Hyperlink
+// Linebox
+// List
+
+//*******************//
+//      Margin
+//*******************//
+
+// complete values
+//****************//
+
+// example:
+// m 10 20 30 40 // margin 10px 20px 30px 40px
+// m 10px 20px // margin 10px 20px
+// m 10px // margin 10px
+
+m(numbers...)  
+
+	if length(numbers) == 2
+
+		top-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
+		right-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
+
+		margin: unit(numbers[0], top-unit) unit(numbers[1], right-unit)
+
+	else if length(numbers) == 3
+
+		top-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
+		right-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
+		bottom-unit = unit(numbers[2]) == '' ? 'px' : unit(numbers[2])
+
+		margin: unit(numbers[0], top-unit) unit(numbers[1], right-unit) unit(numbers[2], bottom-unit)
+
+	else if length(numbers) == 4
+
+		top-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
+		right-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
+		bottom-unit = unit(numbers[2]) == '' ? 'px' : unit(numbers[2])
+		left-unit = unit(numbers[3]) == '' ? 'px' : unit(numbers[3])
+
+		margin: unit(numbers[0], top-unit) unit(numbers[1], right-unit) unit(numbers[2], bottom-unit) unit(numbers[3], left-unit)
+
+	else
+		size-unit = unit(numbers) == '' ? 'px' : unit(numbers)
+		margin: unit(numbers, size-unit)
+
+// specific values
+//****************//
+
+// example:
+// mt 10 // margin-top 10px
+// mr 10pt // margin-right 10pt
+// mb 10% // margin-bottom 10%
+
+mt(val)
+	unit = unit(val) == '' ? 'px' : unit(val)
+	margin-top unit(val, unit)
+
+mr(val)
+	unit = unit(val) == '' ? 'px' : unit(val)
+	margin-right unit(val, unit)
+
+mb(val)
+	unit = unit(val) == '' ? 'px' : unit(val)
+	margin-bottom unit(val, unit)
+
+ml(val)
+	unit = unit(val) == '' ? 'px' : unit(val)
+	margin-left unit(val, unit)
+
+// Marquee
+// Multi-column
+
+
+//*******************//
+//      Padding
+//*******************//
+
+// complete values
+//****************//
+
+// example:
+// p 10 20 30 40 // padding 10px 20px 30px 40px
+// p 10px 20px // paffing 10px 20px
+// p 10px // padding 10px
+
+p(numbers...)  
+
+	if length(numbers) == 2
+
+		top-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
+		right-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
+
+		padding: unit(numbers[0], top-unit) unit(numbers[1], right-unit)
+
+	else if length(numbers) == 3
+
+		top-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
+		right-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
+		bottom-unit = unit(numbers[2]) == '' ? 'px' : unit(numbers[2])
+
+		padding: unit(numbers[0], top-unit) unit(numbers[1], right-unit) unit(numbers[2], bottom-unit)
+
+	else if length(numbers) == 4
+
+		top-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
+		right-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
+		bottom-unit = unit(numbers[2]) == '' ? 'px' : unit(numbers[2])
+		left-unit = unit(numbers[3]) == '' ? 'px' : unit(numbers[3])
+
+		padding: unit(numbers[0], top-unit) unit(numbers[1], right-unit) unit(numbers[2], bottom-unit) unit(numbers[3], left-unit)
+
+	else
+		size-unit = unit(numbers) == '' ? 'px' : unit(numbers)
+		padding: unit(numbers, size-unit)
+
+
+// specific values
+//****************//
+
+// example:
+// pt 10 // padding-top 10px
+// pr 10pt // padding-right 10pt
+// pb 10% // padding-bottom 10%
+
+pt(val)
+	unit = unit(val) == '' ? 'px' : unit(val)
+	padding-top unit(val, unit)
+
+pr(val)
+	unit = unit(val) == '' ? 'px' : unit(val)
+	padding-right unit(val, unit)
+
+pb(val)
+	unit = unit(val) == '' ? 'px' : unit(val)
+	padding-bottom unit(val, unit)
+
+pl(val)
+	unit = unit(val) == '' ? 'px' : unit(val)
+	padding-left unit(val, unit)
+
+// Paged Media
+
+
+//*******************//
+//      Positioning
+//*******************//
+
+// bottom	Specifies the bottom position of a positioned element
+b(val)
+	bottom val
+
+// clear	Specifies which sides of an element where other floating elements are not allowed
+cl(v)
+	clear v
+
+// clip	Clips an absolutely positioned element
+cp(v)
+	clip v
+
+// cursor	Specifies the type of cursor to be displayed	2
+// display	Specifies how a certain HTML element should be displayed	1
+// float	Specifies whether or not a box should float	1
+// left	Specifies the left position of a positioned element	2
+// overflow
+// Specifies what happens if content overflows an element's box	2
+// position	Specifies the type of positioning method used for an element (static, relative, absolute or fixed)	2
+// right	Specifies the right position of a positioned element	2
+// top	Specifies the top position of a positioned element	2
+// visibility	Specifies whether or not an element is visible	2
+// z-index	Sets the stack order of a positioned element
+
+t(v)
+	top v
+
+r(v)
+	right (v)
+
+b(v)
+	right (v)
+
+l(v)
+	left v
+
+// d: display:${1:block}
+
+d(v)
+	if v == b
+		display block
+	else if v == ib
+		display inline-block
+	else if v == i
+		display inline
+	else if v == n
+		display none
+	else if v == box
+		// Firefox
+		display -moz-box 
+		// Safari, Opera, and Chrome
+		display -webkit-box
+		// W3C
+		display box 
+	else
+		display v
+
+// d:n: display:none
+// d:b: display:block
+// d:i: display:inline
+// d:ib: display:inline-block
+// d:li: display:list-item
+// d:ri: display:run-in
+// d:cp: display:compact
+// d:tb: display:table
+// d:itb: display:inline-table
+// d:tbcp: display:table-caption
+// d:tbcl: display:table-column
+// d:tbclg: display:table-column-group
+// d:tbhg: display:table-header-group
+// d:tbfg: display:table-footer-group
+// d:tbr: display:table-row
+// d:tbrg: display:table-row-group
+// d:tbc: display:table-cell
+// d:rb: display:ruby
+// d:rbb: display:ruby-base
+// d:rbbg: display:ruby-base-group
+// d:rbt: display:ruby-text
+// d:rbtg: display:ruby-text-group
+
+
+// Print
+// Ruby
+// Speech
+// Table
+// Text
+// 2D/3D Transform
+// Transition
+// User-interface
+
+
