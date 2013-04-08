@@ -7,15 +7,18 @@ Inspiration
 ==========
 
 Awesome and recursive syntax: https://github.com/sergeche/emmet-sublime
+
 Simple and intuitive css framework: https://github.com/jenius/roots-css
 
 Example
 ==========
 
 Stylus File:
+
   .test
+  
     m 10 10
-  	p 20
+    p 20
   	w 100
   	h 100
   	bg red
@@ -27,7 +30,9 @@ Stylus File:
   	d b
 
 CSS file render:
+
   .test {
+  
     margin: 10px 10px;
     padding: 20px;
     width: 100px;
@@ -42,4 +47,6 @@ CSS file render:
     display: block;
   }
 
+Conclusion
+==========
 Stylus more faster :)
