@@ -83,13 +83,13 @@ bgi(v)
 		background-image url(v)
 
 bgr(v)
-	background-repeat val
+	background-repeat v
 
 bgc(v)
-	background-color val
+	background-color v
 
 bgz(v)
-	background-size val
+	background-size v
 
 // bg: background
 // bg+: background:${1:#fff} url(${2}) ${3:0} ${4:0} ${5:no-repeat}
@@ -139,27 +139,27 @@ bd(v)
 	if (v == n)
 		border none
 	else
-		border val
+		border v
 
 // bdt: border-top
 bdt(v)
-	border-top val
+	border-top v
 
 // bdr: border-right
 bdr(v)
-	border-right val
+	border-right v
 
 // bdl: border-left
 bdl(v)
-	border-left val 
+	border-left v 
 
 // bdb: border-bottom
 bdb(v)
-	border-bottom val
+	border-bottom v
 
 // bdc: border-color:#${1:000}
 bdc(v)
-	border-color val
+	border-color v
 
 
 // Box
@@ -230,19 +230,19 @@ size(numbers...)
 //*******************//
 
 f(v)
-	font val
+	font v
 
 ff(v)
-	font-family val
+	font-family v
 
 fw(v)
-	font-weight val
+	font-weight v
 
 fs(v)
-	font-style val
+	font-style v
 
 fz(v)
-	font-size val
+	font-size v
 
 
 
@@ -559,10 +559,10 @@ v(val, im = '')
 // z-index
 // "z": "z-index:|;",
 // "z:a": "z-index:auto;",
-z(v, va = '')
-	va = va == i ? !important :
+z(v, im = '')
+	im = im == i ? !important :
 	if v == a
-		z-index auto va
+		z-index auto im
 	else
 		z-index v
 
