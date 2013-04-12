@@ -22,7 +22,41 @@
 // Ruby
 // Speech
 // Table
+
+
 // Text
+
+// c": "color:#${1:000};",
+
+c(v)
+	color v
+
+// td": "text-decoration:${1:none};",
+// td:n": "text-decoration:none;",
+// td:u": "text-decoration:underline;",
+// td:o": "text-decoration:overline;",
+// td:l": "text-decoration:line-through;",
+td(v)
+	if v == n
+		text-decoration none
+	else if v == u
+		text-decoration underline
+	else if v == o
+		text-decoration overline
+	else if v == l
+		text-decoration line-through
+	else
+		text-decoration v
+
+// lh": "line-height:|;",
+lh(v)
+	if v == i
+		line-height inherit
+	else
+		line-height v
+
+
+
 // 2D/3D Transform
 // Transition
 // User-interface
@@ -46,15 +80,15 @@ bgi(v)
 	if v == n
 		background-image none
 	else
-		background-image url(val)
+		background-image url(v)
 
-bgr(val)
+bgr(v)
 	background-repeat val
 
-bgc(val)
+bgc(v)
 	background-color val
 
-bgz(val)
+bgz(v)
 	background-size val
 
 // bg: background
@@ -100,7 +134,7 @@ bgz(val)
 //*******************//
 
 // bd: border
-bd(val)
+bd(v)
 	// bd:n: border:none
 	if (v == n)
 		border none
@@ -108,124 +142,24 @@ bd(val)
 		border val
 
 // bdt: border-top
-bdt(val)
+bdt(v)
 	border-top val
 
 // bdr: border-right
-bdr(val)
+bdr(v)
 	border-right val
 
 // bdl: border-left
-bdl(val)
+bdl(v)
 	border-left val 
 
 // bdb: border-bottom
-bdb(val)
+bdb(v)
 	border-bottom val
 
 // bdc: border-color:#${1:000}
-bdc(val)
+bdc(v)
 	border-color val
-
-// bd+: border:${1:1px} ${2:solid} ${3:#000}
-// bdbk: border-break:${1:close}
-// bdbk:c: border-break:close
-// bdcl: border-collapse
-// bdcl:c: border-collapse:collapse
-// bdcl:s: border-collapse:separate
-// bdc:t: border-color:transparent
-// bdi: border-image:url(|)
-// bdi:n: border-image:none
-// bdti: border-top-image:url(|)
-// bdti:n: border-top-image:none
-// bdri: border-right-image:url(|)
-// bdri:n: border-right-image:none
-// bdbi: border-bottom-image:url(|)
-// bdbi:n: border-bottom-image:none
-// bdli: border-left-image:url(|)
-// bdli:n: border-left-image:none
-// bdci: border-corner-image:url(|)
-// bdci:n: border-corner-image:none
-// bdci:c: border-corner-image:continue
-// bdtli: border-top-left-image:url(|)
-// bdtli:n: border-top-left-image:none
-// bdtli:c: border-top-left-image:continue
-// bdtri: border-top-right-image:url(|)
-// bdtri:n: border-top-right-image:none
-// bdtri:c: border-top-right-image:continue
-// bdbri: border-bottom-right-image:url(|)
-// bdbri:n: border-bottom-right-image:none
-// bdbri:c: border-bottom-right-image:continue
-// bdbli: border-bottom-left-image:url(|)
-// bdbli:n: border-bottom-left-image:none
-// bdbli:c: border-bottom-left-image:continue
-// bdf: border-fit:${1:repeat}
-// bdf:c: border-fit:clip
-// bdf:r: border-fit:repeat
-// bdf:sc: border-fit:scale
-// bdf:st: border-fit:stretch
-// bdf:ow: border-fit:overwrite
-// bdf:of: border-fit:overflow
-// bdf:sp: border-fit:space
-// bdl: border-length
-// bdl:a: border-length:auto
-// bdsp: border-spacing
-// bds: border-style
-// bds:n: border-style:none
-// bds:h: border-style:hidden
-// bds:dt: border-style:dotted
-// bds:ds: border-style:dashed
-// bds:s: border-style:solid
-// bds:db: border-style:double
-// bds:dtds: border-style:dot-dash
-// bds:dtdtds: border-style:dot-dot-dash
-// bds:w: border-style:wave
-// bds:g: border-style:groove
-// bds:r: border-style:ridge
-// bds:i: border-style:inset
-// bds:o: border-style:outset
-// bdw: border-width
-// bdtw: border-top-width
-// bdrw: border-right-width
-// bdbw: border-bottom-width
-// bdlw: border-left-width
-// bt: border-top
-// bdt+: border-top:${1:1px} ${2:solid} ${3:#000}
-// bdt:n: border-top:none
-// bdtw: border-top-width
-// bdts: border-top-style
-// bdts:n: border-top-style:none
-// bdtc: border-top-color:#${1:000}
-// bdtc:t: border-top-color:transparent
-// br: border-right
-// bdr+: border-right:${1:1px} ${2:solid} ${3:#000}
-// bdr:n: border-right:none
-// bdrw: border-right-width
-// bdrs: border-right-style
-// bdrs:n: border-right-style:none
-// bdrc: border-right-color:#${1:000}
-// bdrc:t: border-right-color:transparent
-// bb: border-bottom
-// bdb+: border-bottom:${1:1px} ${2:solid} ${3:#000}
-// bdb:n: border-bottom:none
-// bdbw: border-bottom-width
-// bdbs: border-bottom-style
-// bdbs:n: border-bottom-style:none
-// bdbc: border-bottom-color:#${1:000}
-// bdbc:t: border-bottom-color:transparent
-// bl: border-left
-// bdl+: border-left:${1:1px} ${2:solid} ${3:#000}
-// bdl:n: border-left:none
-// bdlw: border-left-width
-// bdls: border-left-style
-// bdls:n: border-left-style:none
-// bdlc: border-left-color:#${1:000}
-// bdlc:t: border-left-color:transparent
-// bdrs: border-radius
-// bdtrrs: border-top-right-radius
-// bdtlrs: border-top-left-radius
-// bdbrrs: border-bottom-right-radius
-// bdblrs: border-bottom-left-radius
 
 
 // Box
@@ -235,8 +169,7 @@ bdc(val)
 //      Color
 //*******************//
 
-c(v)
-	color v
+
 
 
 // Content Paged Media
@@ -245,25 +178,29 @@ c(v)
 //      Dimension
 //*******************//
 
-// Height
-//****************//
+// "h": "height
+h(v)
+	if v == n
+		height none
 
-// example:
-// h 10 // height 10px
+	else if v == a
+		height auto
 
-h(val)
-	unit = unit(val) == '' ? 'px' : unit(val)
-	height unit(val, unit)
+	else
+		unit = unit(v) == '' ? 'px' : unit(v)
+		height unit(v, unit)
 
-// Width
-//****************//
+// "w": "width
+w(v)
+	if v == n
+		width none
 
-// example:
-// w 10 // width 10px
+	else if v == a
+		width auto
 
-w(val)
-	unit = unit(val) == '' ? 'px' : unit(val)
-	width unit(val, unit)
+	else
+		unit = unit(v) == '' ? 'px' : unit(v)
+		width unit(v, unit)
 
 // Mixin: Size
 // Quickly and smoothly set width and height.
@@ -279,7 +216,6 @@ size(numbers...)
 		width:  unit(numbers[0], width-unit)
 		height: unit(numbers[1], height-unit)
 	else
-
 		size-unit = unit(numbers) == '' ? 'px' : unit(numbers)
 
 		width:  unit(numbers, size-unit)
@@ -293,19 +229,19 @@ size(numbers...)
 //      Font
 //*******************//
 
-f(val)
+f(v)
 	font val
 
-ff(val)
+ff(v)
 	font-family val
 
-fw(val)
+fw(v)
 	font-weight val
 
-fs(val)
+fs(v)
 	font-style val
 
-fz(val)
+fz(v)
 	font-size val
 
 
@@ -366,21 +302,21 @@ m(numbers...)
 // mr 10pt // margin-right 10pt
 // mb 10% // margin-bottom 10%
 
-mt(val)
-	unit = unit(val) == '' ? 'px' : unit(val)
-	margin-top unit(val, unit)
+mt(v)
+	unit = unit(v) == '' ? 'px' : unit(v)
+	margin-top unit(v, unit)
 
-mr(val)
-	unit = unit(val) == '' ? 'px' : unit(val)
-	margin-right unit(val, unit)
+mr(v)
+	unit = unit(v) == '' ? 'px' : unit(v)
+	margin-right unit(v, unit)
 
-mb(val)
-	unit = unit(val) == '' ? 'px' : unit(val)
-	margin-bottom unit(val, unit)
+mb(v)
+	unit = unit(v) == '' ? 'px' : unit(v)
+	margin-bottom unit(v, unit)
 
-ml(val)
-	unit = unit(val) == '' ? 'px' : unit(val)
-	margin-left unit(val, unit)
+ml(v)
+	unit = unit(v) == '' ? 'px' : unit(v)
+	margin-left unit(v, unit)
 
 // Marquee
 // Multi-column
@@ -437,67 +373,110 @@ p(numbers...)
 // pr 10pt // padding-right 10pt
 // pb 10% // padding-bottom 10%
 
-pt(val)
-	unit = unit(val) == '' ? 'px' : unit(val)
-	padding-top unit(val, unit)
+pt(v)
+	unit = unit(v) == '' ? 'px' : unit(v)
+	padding-top unit(v, unit)
 
-pr(val)
-	unit = unit(val) == '' ? 'px' : unit(val)
-	padding-right unit(val, unit)
+pr(v)
+	unit = unit(v) == '' ? 'px' : unit(v)
+	padding-right unit(v, unit)
 
-pb(val)
-	unit = unit(val) == '' ? 'px' : unit(val)
-	padding-bottom unit(val, unit)
+pb(v)
+	unit = unit(v) == '' ? 'px' : unit(v)
+	padding-bottom unit(v, unit)
 
-pl(val)
-	unit = unit(val) == '' ? 'px' : unit(val)
-	padding-left unit(val, unit)
+pl(v)
+	unit = unit(v) == '' ? 'px' : unit(v)
+	padding-left unit(v, unit)
 
 // Paged Media
 
-
-//*******************//
+//**************************//
 //      Positioning
-//*******************//
+//**************************//
 
-// bottom	Specifies the bottom position of a positioned element
-b(val)
-	bottom val
-
-// clear	Specifies which sides of an element where other floating elements are not allowed
+//clear
+// "cl": "clear:${1:both};",
+// "cl:n": "clear:none;",
+// "cl:l": "clear:left;",
+// "cl:r": "clear:right;",
+// "cl:b": "clear:both;",
 cl(v)
-	clear v
+	if v == b
+		clear both
+	else if v == n
+		clear none
+	else if v == l
+		clear left
+	else if v == r
+		clear right
+	else
+		clear v
 
-// clip	Clips an absolutely positioned element
+// clip
+// "cp": "clip:|;",
+// "cp:a": "clip:auto;",
+// "cp:r": "clip:rect(${1:top} ${2:right} ${3:bottom} ${4:left});",
 cp(v)
-	clip v
+	if v == a
+		clip auto
+	else
+		clip v
 
-// cursor	Specifies the type of cursor to be displayed	2
-// display	Specifies how a certain HTML element should be displayed	1
-// float	Specifies whether or not a box should float	1
-// left	Specifies the left position of a positioned element	2
-// overflow
-// Specifies what happens if content overflows an element's box	2
-// position	Specifies the type of positioning method used for an element (static, relative, absolute or fixed)	2
-// right	Specifies the right position of a positioned element	2
-// top	Specifies the top position of a positioned element	2
-// visibility	Specifies whether or not an element is visible	2
-// z-index	Sets the stack order of a positioned element
+// cursor
+// cur": "cursor:${pointer};",
+// cur:a": "cursor:auto;",
+// cur:d": "cursor:default;",
+// cur:c": "cursor:crosshair;",
+// cur:ha": "cursor:hand;",
+// cur:he": "cursor:help;",
+// cur:m": "cursor:move;",
+// cur:p": "cursor:pointer;",
+// cur:t": "cursor:text;",
+cur(v)
+	if v == p
+		cursor pointer
+	else if v == a
+		cursor auto
+	else if v == d
+		cursor default
+	else if v == c
+		cursor crosshair
+	else if v == ha
+		cursor hand
+	else if v == he
+		cursor help
+	else if v == m
+		cursor move
+	else if v == t
+		cursor text
+	else
+		cursor v
 
-t(v)
-	top v
-
-r(v)
-	right (v)
-
-b(v)
-	right (v)
-
-l(v)
-	left v
-
-// d: display:${1:block}
-
+// display
+// "d": "display:${1:block};",
+// "d:n": "display:none;",
+// "d:b": "display:block;",
+// "d:i": "display:inline;",
+// "d:ib": "display:inline-block;",
+// "d:li": "display:list-item;",
+// "d:ri": "display:run-in;",
+// "d:cp": "display:compact;",
+// "d:tb": "display:table;",
+// "d:itb": "display:inline-table;",
+// "d:tbcp": "display:table-caption;",
+// "d:tbcl": "display:table-column;",
+// "d:tbclg": "display:table-column-group;",
+// "d:tbhg": "display:table-header-group;",
+// "d:tbfg": "display:table-footer-group;",
+// "d:tbr": "display:table-row;",
+// "d:tbrg": "display:table-row-group;",
+// "d:tbc": "display:table-cell;",
+// "d:rb": "display:ruby;",
+// "d:rbb": "display:ruby-base;",
+// "d:rbbg": "display:ruby-base-group;",
+// "d:rbt": "display:ruby-text;",
+// "d:rbtg": "display:ruby-text-group;",
 d(v)
 	if v == b
 		display block
@@ -517,28 +496,76 @@ d(v)
 	else
 		display v
 
-// d:n: display:none
-// d:b: display:block
-// d:i: display:inline
-// d:ib: display:inline-block
-// d:li: display:list-item
-// d:ri: display:run-in
-// d:cp: display:compact
-// d:tb: display:table
-// d:itb: display:inline-table
-// d:tbcp: display:table-caption
-// d:tbcl: display:table-column
-// d:tbclg: display:table-column-group
-// d:tbhg: display:table-header-group
-// d:tbfg: display:table-footer-group
-// d:tbr: display:table-row
-// d:tbrg: display:table-row-group
-// d:tbc: display:table-cell
-// d:rb: display:ruby
-// d:rbb: display:ruby-base
-// d:rbbg: display:ruby-base-group
-// d:rbt: display:ruby-text
-// d:rbtg: display:ruby-text-group
+// float
+// "fl:l": "float:left;",
+// "fl:r": "float:right;",
+// "fl:n": "float:none;",
+fl(v)
+	if v == l
+		float left
+	else if v == r
+		float right
+	else if v == n
+		float none
+	else
+		float v
+
+// left
+l(v)
+	if v == a
+		left auto
+	else
+		left v
+// overflow
+// position
+
+// right
+r(v)
+	if v == a
+		right auto
+	else
+		right v
+
+// top
+t(v)
+	if v == a
+		top auto
+	else
+		top v
+
+// bottom
+b(v)
+	if v == a
+		bottom auto
+	else
+		bottom v
+
+// visibility
+// "v:v": "visibility:visible;",
+// "v:h": "visibility:hidden;",
+// "v:c": "visibility:collapse;",
+v(val, im = '')
+	im = im == i ? !important :
+
+	if val == v
+		visibility visible im
+	else if val == h
+		visibility hidden im
+	else if val == c
+		visibility collapse im
+	else
+		visibility val im
+
+// z-index
+// "z": "z-index:|;",
+// "z:a": "z-index:auto;",
+z(v, va = '')
+	va = va == i ? !important :
+	if v == a
+		z-index auto va
+	else
+		z-index v
+
 
 
 // Print
@@ -549,5 +576,3 @@ d(v)
 // 2D/3D Transform
 // Transition
 // User-interface
-
-
