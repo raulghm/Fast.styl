@@ -24,18 +24,21 @@
 // Table
 
 
-// Text
+//*******************//
+//      Text
+//*******************//
 
-// c": "color:#${1:000};",
-
+// color
 c(v)
 	color v
 
-// td": "text-decoration:${1:none};",
-// td:n": "text-decoration:none;",
-// td:u": "text-decoration:underline;",
-// td:o": "text-decoration:overline;",
-// td:l": "text-decoration:line-through;",
+// direction
+// letter-spacing
+// line-height
+lh(v)
+	line-height v
+// text-align
+// text-decoration
 td(v)
 	if v == n
 		text-decoration none
@@ -54,6 +57,32 @@ lh(v)
 		line-height inherit
 	else
 		line-height v
+
+// text-indent
+// text-transform
+tt(v)	
+	if v == u
+		text-transform uppercase
+	else if v == l
+		text-transform lowercase
+	else
+		text-transform v
+// unicode-bidi
+// vertical-align
+// white-space
+// word-spacing
+// hanging-punctuation
+// punctuation-trim	
+// text-align-last
+// text-justify	
+// text-outline
+// text-overflow
+// text-shadow
+// text-wrap	
+// word-break
+// word-wrap	
+
+
 
 
 
