@@ -74,6 +74,16 @@ tt(v)
 // hanging-punctuation
 // punctuation-trim	
 // text-align-last
+ta(v)
+	if v == l
+		text-align left
+	else if v == r
+		text-align right
+	else if v == c
+		text-align center
+	else
+		text-align v
+
 // text-justify	
 // text-outline
 // text-overflow
@@ -100,6 +110,8 @@ tt(v)
 bg(v)
 	if v == a
 		background auto
+	else if v == t
+		background transparent
 	else if v == n
 		background none
 	else
@@ -115,7 +127,10 @@ bgr(v)
 	background-repeat v
 
 bgc(v)
-	background-color v
+	if v == t
+		background transparent
+	else
+		background-color v
 
 bgz(v)
 	background-size v
@@ -165,7 +180,7 @@ bgz(v)
 // bd: border
 bd(v)
 	// bd:n: border:none
-	if (v == n)
+	if v == n
 		border none
 	else
 		border v
@@ -215,9 +230,40 @@ h(v)
 	else if v == a
 		height auto
 
+	else if v == i
+		height inherit
+
 	else
 		unit = unit(v) == '' ? 'px' : unit(v)
 		height unit(v, unit)
+
+mih(v)
+	if v == n
+		min-height none
+
+	else if v == a
+		min-height auto
+
+	else if v == i
+		min-height inherit
+
+	else
+		unit = unit(v) == '' ? 'px' : unit(v)
+		min-height unit(v, unit)
+
+mah(v)
+	if v == n
+		max-height none
+
+	else if v == a
+		max-height auto
+
+	else if v == i
+		max-height inherit
+
+	else
+		unit = unit(v) == '' ? 'px' : unit(v)
+		max-height unit(v, unit)
 
 // "w": "width
 w(v)
@@ -230,6 +276,31 @@ w(v)
 	else
 		unit = unit(v) == '' ? 'px' : unit(v)
 		width unit(v, unit)
+
+miw(v)
+	if v == n
+		min-width none
+
+	else if v == a
+		min-width auto
+		maw
+
+	else
+		unit = unit(v) == '' ? 'px' : unit(v)
+		min-width unit(v, unit)
+
+maw(v)
+	if v == n
+		max-width none
+
+	else if v == a
+		max-width auto
+		maw
+
+	else
+		unit = unit(v) == '' ? 'px' : unit(v)
+		max-width unit(v, unit)
+
 
 // Mixin: Size
 // Quickly and smoothly set width and height.
@@ -424,6 +495,18 @@ pl(v)
 //      Positioning
 //**************************//
 
+pos(v)
+	if v == r
+		position relative
+	else if v == a
+		position absolute
+	else if v == f
+		position fixed
+	else if v == s
+		position static
+	else 
+		position v
+
 //clear
 // "cl": "clear:${1:both};",
 // "cl:n": "clear:none;",
@@ -540,12 +623,17 @@ fl(v)
 		float v
 
 // left
-l(v)
+l(v = false)
 	if v == a
 		left auto
 	else
 		left v
 // overflow
+ov(v)
+	if v == h 
+		overflow hidden
+	else
+		overflow v
 // position
 
 // right
