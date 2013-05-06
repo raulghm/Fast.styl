@@ -126,11 +126,12 @@ bgi(v)
 bgr(v)
 	background-repeat v
 
-bgc(v)
+bgc(v, im = '')
+	im = im == i ? !important :
 	if v == t
-		background transparent
+		background transparent im
 	else
-		background-color v
+		background-color v im
 
 bgz(v)
 	background-size v
@@ -213,6 +214,8 @@ bdc(v)
 //      Color
 //*******************//
 
+op(v)
+	opacity v 
 
 
 
@@ -350,7 +353,15 @@ fz(v)
 // Grid
 // Hyperlink
 // Linebox
-// List
+
+
+//*******************//
+//      List
+//*******************//
+
+// list-style
+lis(v)
+	list-style v
 
 //*******************//
 //      Margin
