@@ -206,6 +206,8 @@ bdb(v)
 bdc(v)
 	border-color v
 
+bdrz(v)
+	border-radius v
 
 // Box
 
@@ -378,7 +380,8 @@ lis(v)
 m(numbers...)  
 
 	if length(numbers) == 2
-
+	
+		// if (numbers[0] == 'a')
 		top-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
 		right-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
 
@@ -633,40 +636,46 @@ fl(v)
 	else
 		float v
 
-// left
-l(v = false)
-	if v == a
-		left auto
-	else
-		left v
 // overflow
 ov(v)
 	if v == h 
 		overflow hidden
 	else
 		overflow v
+
 // position
+
+// left
+l(v)
+	if v == a
+		left auto
+	else
+		unit = unit(v) == '' ? 'px' : unit(v)
+		left unit(v, unit)
 
 // right
 r(v)
 	if v == a
 		right auto
 	else
-		right v
+		unit = unit(v) == '' ? 'px' : unit(v)
+		right unit(v, unit)
 
 // top
 t(v)
 	if v == a
 		top auto
 	else
-		top v
+		unit = unit(v) == '' ? 'px' : unit(v)
+		top unit(v, unit)
 
 // bottom
 b(v)
 	if v == a
 		bottom auto
 	else
-		bottom v
+		unit = unit(v) == '' ? 'px' : unit(v)
+		bottom unit(v, unit)
 
 // visibility
 // "v:v": "visibility:visible;",
