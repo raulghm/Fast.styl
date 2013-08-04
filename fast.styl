@@ -1,233 +1,242 @@
-// Animation
-// Background
-// Border and outline
-// Box
-// Color
-// Content Paged Media
-// Dimension
-// Flexible Box
-// Font
-// Generated content
-// Grid
-// Hyperlink
-// Linebox
-// List
-// Margin
-// Marquee
-// Multi-column
-// Padding
-// Paged Media
-// Positioning
-// Print
-// Ruby
-// Speech
-// Table
+/*
+ *
+ * Fast.styl
+ * "Short and fast syntax for your css stylus projects"
+ *
+ * By: Raúl Hernández
+ * Twitter: @raulghm
+ * Support: https://github.com/raulghm/Fast.styl
+ *
+ * --------------------------------------------------------------------
+ */
 
 
-//*******************//
-//      Text
-//*******************//
+/*
+	EXAMPLE
 
-// color
-c(v)
-	color v
+	From:
 
-// direction
-// letter-spacing
-// line-height
-lh(v)
-	line-height v
-// text-align
-// text-decoration
-td(v)
-	if v == n
-		text-decoration none
-	else if v == u
-		text-decoration underline
-	else if v == o
-		text-decoration overline
-	else if v == l
-		text-decoration line-through
-	else
-		text-decoration v
+		.myClass
+			c red
+			lh 1em
+			bgc blue
+			d b
+			m 0 5 8 10
 
-// lh": "line-height:|;",
-lh(v)
-	if v == i
-		line-height inherit
-	else
-		line-height v
+	Result:
 
-// text-indent
-// text-transform
-tt(v)	
-	if v == u
-		text-transform uppercase
-	else if v == l
-		text-transform lowercase
-	else
-		text-transform v
-// unicode-bidi
-// vertical-align
-// white-space
-// word-spacing
-// hanging-punctuation
-// punctuation-trim	
-// text-align-last
-ta(v)
-	if v == l
-		text-align left
-	else if v == r
-		text-align right
-	else if v == c
-		text-align center
-	else
-		text-align v
+		.myClass {
+			color: red;
+			line-height: 1em;
+			background-color: blue;
+			display: block;
+			margin: 0 5px 8px 10px;
+		}
 
-// text-justify	
-// text-outline
-// text-overflow
-// text-shadow
-// text-wrap	
-// word-break
-// word-wrap	
+ * --------------------------------------------------------------------
+ */
 
 
+/*
+	CONTENT
+	References from: http://www.w3schools.com/cssref/default.asp
 
+		Animation
+		Background
+		Border and outline
+		Box
+		Color
+		Content Paged Media
+		Dimension
+		Flexible Box
+		Font
+		Generated content
+		Grid
+		Hyperlink
+		Linebox
+		List
+		Margin
+		Marquee
+		Multi-column
+		Padding
+		Paged Media
+		Positioning
+		Print
+		Ruby
+		Speech
+		Table
+		Text
+		2D/3D Transform
+		Transition
+		User-interface
 
+ * --------------------------------------------------------------------
+ */
 
-// 2D/3D Transform
-// Transition
-// User-interface
+/*
+ * --------------------------------------------------------------------
+ * Animation Properties
+ * --------------------------------------------------------------------
+ */
 
+// animation
+an(v)
+	animation v
 
-// Animation
+ // @keyframes
+ // animation
+ // animation-name
+ // animation-duration
+ // animation-timing-function
+ // animation-delay
+ // animation-iteration-count
+ // animation-direction
+ // animation-play-state
 
-//*******************//
-//      Background
-//*******************//
+/*
+ * --------------------------------------------------------------------
+ * Background
+ * --------------------------------------------------------------------
+ */
 
+// background
 bg(v)
-	if v == a
-		background auto
-	else if v == t
-		background transparent
-	else if v == n
-		background none
-	else
-		background v
+if v == a
+	background auto
+else if v == t
+	background transparent
+else if v == n
+	background none
+else
+	background v
 
-bgi(v)	
-	if v == n
-		background-image none
-	else
-		background-image url(v)
+// background-image
+bgi(v)
+if v == n
+	background-image none
+else
+	background-image url(v)
 
+// background-repeat
 bgr(v)
-	background-repeat v
+background-repeat v
 
+// background-color
 bgc(v, im = '')
-	im = im == i ? !important :
-	if v == t
-		background transparent im
-	else
-		background-color v im
+im = im == i ? !important :
+if v == t
+	background transparent im
+else
+	background-color v im
 
+// background-size
 bgz(v)
-	background-size v
+background-size v
 
-// bg: background
-// bg+: background:${1:#fff} url(${2}) ${3:0} ${4:0} ${5:no-repeat}
-// bg:n: background:none
-// bg:ie: filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='${1:x}.png',sizingMethod='${2:crop}')
-// bgc: background-color:#${1:fff}
-// bgc:t: background-color:transparent
-// bgi: background-image:url(|)
-// bgi:n: background-image:none
-// bgr: background-repeat
-// bgr:n: background-repeat:no-repeat
-// bgr:x: background-repeat:repeat-x
-// bgr:y: background-repeat:repeat-y
-// bgr:sp: background-repeat:space
-// bgr:rd: background-repeat:round
-// bga: background-attachment
-// bga:f: background-attachment:fixed
-// bga:s: background-attachment:scroll
-// bgp: background-position:${1:0} ${2:0}
-// bgpx: background-position-x
-// bgpy: background-position-y
-// bgbk: background-break
-// bgbk:bb: background-break:bounding-box
-// bgbk:eb: background-break:each-box
-// bgbk:c: background-break:continuous
-// bgcp: background-clip:${1:padding-box}
-// bgcp:bb: background-clip:border-box
-// bgcp:pb: background-clip:padding-box
-// bgcp:cb: background-clip:content-box
-// bgcp:nc: background-clip:no-clip
-// bgo: background-origin
-// bgo:pb: background-origin:padding-box
-// bgo:bb: background-origin:border-box
-// bgo:cb: background-origin:content-box
-// bgsz: background-size
-// bgsz:a: background-size:auto
-// bgsz:ct: background-size:contain
-// bgsz:cv: background-size:cover
 
-//*******************//
-// Border and outline
-//*******************//
+/*
+ * --------------------------------------------------------------------
+ * Border and outline
+ * --------------------------------------------------------------------
+ */
 
-// bd: border
+// border
 bd(v)
-	// bd:n: border:none
 	if v == n
 		border none
 	else
 		border v
 
-// bdt: border-top
+// border-top
 bdt(v)
 	border-top v
 
-// bdr: border-right
+// border-right
 bdr(v)
 	border-right v
 
-// bdl: border-left
+// border-left
 bdl(v)
-	border-left v 
+	border-left v
 
-// bdb: border-bottom
+// border-bottom
 bdb(v)
 	border-bottom v
 
-// bdc: border-color:#${1:000}
+// border-color
 bdc(v)
 	border-color v
 
+// border-radius
 bdrz(v)
 	border-radius v
 
-// Box
+// box-shadow
+bs(v)
+	box-shadow v
 
 
-//*******************//
-//      Color
-//*******************//
+/*
+ * --------------------------------------------------------------------
+ * Box
+ * --------------------------------------------------------------------
+ */
 
+// overflow
+ov(v)
+	if v == h
+		overflow hidden
+	else if v == v
+		overflow visible
+	else
+		overflow v
+// overflow-x
+// overflow-y
+// overflow-style
+// rotation
+// rotation-point
+
+/*
+ * --------------------------------------------------------------------
+ * Color
+ * --------------------------------------------------------------------
+ */
+
+// opacity
 op(v)
-	opacity v 
+	opacity v
+
+// color-profile
+// rendering-intent
 
 
+/*
+ * --------------------------------------------------------------------
+ * Content Paged Media
+ * --------------------------------------------------------------------
+ */
 
-// Content Paged Media
+// bookmark-label
+// bookmark-level
+// bookmark-target
+// float-offset
+// hyphenate-after
+// hyphenate-before
+// hyphenate-character
+// hyphenate-lines
+// hyphenate-resource
+// hyphens
+// image-resolution
+// marks
+// string-set
 
-//*******************//
-//      Dimension
-//*******************//
+/*
+ * --------------------------------------------------------------------
+ * Dimension Properties
+ * --------------------------------------------------------------------
+ */
 
-// "h": "height
+// height
 h(v)
 	if v == n
 		height none
@@ -242,6 +251,7 @@ h(v)
 		unit = unit(v) == '' ? 'px' : unit(v)
 		height unit(v, unit)
 
+// min-height
 mih(v)
 	if v == n
 		min-height none
@@ -256,6 +266,7 @@ mih(v)
 		unit = unit(v) == '' ? 'px' : unit(v)
 		min-height unit(v, unit)
 
+// max-height
 mah(v)
 	if v == n
 		max-height none
@@ -270,7 +281,7 @@ mah(v)
 		unit = unit(v) == '' ? 'px' : unit(v)
 		max-height unit(v, unit)
 
-// "w": "width
+// width
 w(v)
 	if v == n
 		width none
@@ -282,8 +293,9 @@ w(v)
 		unit = unit(v) == '' ? 'px' : unit(v)
 		width unit(v, unit)
 
+// min-width
 miw(v)
-	if v == n
+	if v == none
 		min-width none
 
 	else if v == a
@@ -294,6 +306,7 @@ miw(v)
 		unit = unit(v) == '' ? 'px' : unit(v)
 		min-width unit(v, unit)
 
+// max-width
 maw(v)
 	if v == n
 		max-width none
@@ -327,60 +340,148 @@ size(numbers...)
 		height: unit(numbers, size-unit)
 
 
-// Flexible Box
+/*
+ * --------------------------------------------------------------------
+ * Flexible Box
+ * --------------------------------------------------------------------
+ */
 
+// box-align
+// box-direction
+// box-flex
+// box-flex-group
+// box-lines
+// box-ordinal-group
+// box-orient
+// box-pack
 
-//*******************//
-//      Font
-//*******************//
+/*
+ * --------------------------------------------------------------------
+ * Font
+ * --------------------------------------------------------------------
+ */
 
+// font
 f(v)
 	font v
 
+// font-family
 ff(v)
 	font-family v
 
+// font-weight
 fw(v)
 	font-weight v
 
+// font-style
 fs(v)
-	font-style v
+	if v == i
+		font-style i
+	else if v == n
+		font-style normal
+	else
+		font-style v
 
+// font-variant
+// @font-face
+// font-size-adjust
+// font-stretch
+
+// font-size
 fz(v)
 	font-size v
 
+/*
+ * --------------------------------------------------------------------
+ * Generated Content
+ * --------------------------------------------------------------------
+ */
 
+// content
+con($v)
+	content '$v'
+// counter-increment
+// counter-reset
+// quotes
+// crop
+// move-to
+// page-policy
 
-// Generated content
-// Grid
-// Hyperlink
-// Linebox
+/*
+ * --------------------------------------------------------------------
+ * Grid
+ * --------------------------------------------------------------------
+ */
 
+// grid-columns
+// grid-rows
 
-//*******************//
-//      List
-//*******************//
+/*
+ * --------------------------------------------------------------------
+ * Hyperlink
+ * --------------------------------------------------------------------
+ */
+
+// target
+// target-name
+// target-new
+// target-position
+
+/*
+ * --------------------------------------------------------------------
+ * Linebox
+ * --------------------------------------------------------------------
+ */
+
+// alignment-adjust
+// alignment-baseline
+// baseline-shift
+// dominant-baseline
+// drop-initial-after-adjust
+// drop-initial-after-align
+// drop-initial-before-adjust
+// drop-initial-before-align
+// drop-initial-size
+// drop-initial-value
+// inline-box-align
+// line-stacking
+// line-stacking-ruby
+// line-stacking-shift
+// line-stacking-strategy
+// text-height
+
+/*
+ * --------------------------------------------------------------------
+ * List
+ * --------------------------------------------------------------------
+ */
 
 // list-style
 lis(v)
-	list-style v
+	if v == n
+		list-style none
+	else
+		list-style v
 
-//*******************//
-//      Margin
-//*******************//
+// list-style-image
+// list-style-position
+// list-style-type
 
-// complete values
-//****************//
+/*
+ * --------------------------------------------------------------------
+ * Margin
+ * --------------------------------------------------------------------
+ */
 
-// example:
-// m 10 20 30 40 // margin 10px 20px 30px 40px
-// m 10px 20px // margin 10px 20px
-// m 10px // margin 10px
+ // example:
+ // m 10 20 30 40 // margin 10px 20px 30px 40px
+ // m 10px 20px // margin 10px 20px
+ // m 10px // margin 10px
 
-m(numbers...)  
+m(numbers...)
 
 	if length(numbers) == 2
-	
+
 		// if (numbers[0] == 'a')
 		top-unit  = unit(numbers[0]) == '' ? 'px' : unit(numbers[0])
 		right-unit = unit(numbers[1]) == '' ? 'px' : unit(numbers[1])
@@ -408,47 +509,72 @@ m(numbers...)
 		size-unit = unit(numbers) == '' ? 'px' : unit(numbers)
 		margin: unit(numbers, size-unit)
 
-// specific values
-//****************//
-
 // example:
 // mt 10 // margin-top 10px
 // mr 10pt // margin-right 10pt
 // mb 10% // margin-bottom 10%
 
+// margin-top
 mt(v)
 	unit = unit(v) == '' ? 'px' : unit(v)
 	margin-top unit(v, unit)
 
+// margin-right
 mr(v)
 	unit = unit(v) == '' ? 'px' : unit(v)
 	margin-right unit(v, unit)
 
+// margin-bottom
 mb(v)
 	unit = unit(v) == '' ? 'px' : unit(v)
 	margin-bottom unit(v, unit)
 
+// margin-left
 ml(v)
 	unit = unit(v) == '' ? 'px' : unit(v)
 	margin-left unit(v, unit)
 
-// Marquee
-// Multi-column
+/*
+ * --------------------------------------------------------------------
+ * Marquee
+ * --------------------------------------------------------------------
+ */
+
+// marquee-direction
+// marquee-play-count
+// marquee-speed
+// marquee-style
+
+/*
+ * --------------------------------------------------------------------
+ * Multi-column
+ * --------------------------------------------------------------------
+ */
+
+// column-count
+// column-fill
+// column-gap
+// column-rule
+// column-rule-color
+// column-rule-style
+// column-rule-width
+// column-span
+// column-width
+// columns
 
 
-//*******************//
-//      Padding
-//*******************//
+/*
+ * --------------------------------------------------------------------
+ * Padding
+ * --------------------------------------------------------------------
+ */
 
-// complete values
-//****************//
+ // example:
+ // p 10 20 30 40 // padding 10px 20px 30px 40px
+ // p 10px 20px // paffing 10px 20px
+ // p 10px // padding 10px
 
-// example:
-// p 10 20 30 40 // padding 10px 20px 30px 40px
-// p 10px 20px // paffing 10px 20px
-// p 10px // padding 10px
-
-p(numbers...)  
+p(numbers...)
 
 	if length(numbers) == 2
 
@@ -479,36 +605,68 @@ p(numbers...)
 		padding: unit(numbers, size-unit)
 
 
-// specific values
-//****************//
-
 // example:
 // pt 10 // padding-top 10px
 // pr 10pt // padding-right 10pt
 // pb 10% // padding-bottom 10%
 
+// padding-top
 pt(v)
 	unit = unit(v) == '' ? 'px' : unit(v)
 	padding-top unit(v, unit)
 
+// padding-right
 pr(v)
 	unit = unit(v) == '' ? 'px' : unit(v)
 	padding-right unit(v, unit)
 
+// padding-bottom
 pb(v)
 	unit = unit(v) == '' ? 'px' : unit(v)
 	padding-bottom unit(v, unit)
 
+// padding-left
 pl(v)
 	unit = unit(v) == '' ? 'px' : unit(v)
 	padding-left unit(v, unit)
 
-// Paged Media
+/*
+ * --------------------------------------------------------------------
+ * Paged Media
+ * --------------------------------------------------------------------
+ */
 
-//**************************//
-//      Positioning
-//**************************//
+// fit
+// fit-position
+// image-orientation
+// page
+// size
 
+/*
+ * --------------------------------------------------------------------
+ * Positiong
+ * --------------------------------------------------------------------
+ */
+
+// bottom
+// clear
+// clip
+// cursor
+// display
+// float
+// left
+// overflow
+// position
+// right
+// top
+// visibility
+// z-index
+
+// position
+// pos r -> position relative
+// pos a -> position absolute
+// pos f -> position fixed
+// pos s -> position static
 pos(v)
 	if v == r
 		position relative
@@ -518,15 +676,14 @@ pos(v)
 		position fixed
 	else if v == s
 		position static
-	else 
+	else
 		position v
 
-//clear
-// "cl": "clear:${1:both};",
-// "cl:n": "clear:none;",
-// "cl:l": "clear:left;",
-// "cl:r": "clear:right;",
-// "cl:b": "clear:both;",
+// clear
+// cl b -> clear both
+// cl n -> clear none
+// cl l -> clear left
+// cl r -> clear right
 cl(v)
 	if v == b
 		clear both
@@ -540,9 +697,7 @@ cl(v)
 		clear v
 
 // clip
-// "cp": "clip:|;",
-// "cp:a": "clip:auto;",
-// "cp:r": "clip:rect(${1:top} ${2:right} ${3:bottom} ${4:left});",
+// cp a -> clip auto
 cp(v)
 	if v == a
 		clip auto
@@ -550,15 +705,14 @@ cp(v)
 		clip v
 
 // cursor
-// cur": "cursor:${pointer};",
-// cur:a": "cursor:auto;",
-// cur:d": "cursor:default;",
-// cur:c": "cursor:crosshair;",
-// cur:ha": "cursor:hand;",
-// cur:he": "cursor:help;",
-// cur:m": "cursor:move;",
-// cur:p": "cursor:pointer;",
-// cur:t": "cursor:text;",
+// cur a -> cursor auto
+// cur p -> cursor pointer
+// cur d -> cursor default
+// cur c -> cursor crosshair
+// cur ha -> cursor hand
+// cur he -> cursor help
+// cur m -> cursor move
+// cur t -> cursor text
 cur(v)
 	if v == p
 		cursor pointer
@@ -580,29 +734,29 @@ cur(v)
 		cursor v
 
 // display
-// "d": "display:${1:block};",
-// "d:n": "display:none;",
-// "d:b": "display:block;",
-// "d:i": "display:inline;",
-// "d:ib": "display:inline-block;",
-// "d:li": "display:list-item;",
-// "d:ri": "display:run-in;",
-// "d:cp": "display:compact;",
-// "d:tb": "display:table;",
-// "d:itb": "display:inline-table;",
-// "d:tbcp": "display:table-caption;",
-// "d:tbcl": "display:table-column;",
-// "d:tbclg": "display:table-column-group;",
-// "d:tbhg": "display:table-header-group;",
-// "d:tbfg": "display:table-footer-group;",
-// "d:tbr": "display:table-row;",
-// "d:tbrg": "display:table-row-group;",
-// "d:tbc": "display:table-cell;",
-// "d:rb": "display:ruby;",
-// "d:rbb": "display:ruby-base;",
-// "d:rbbg": "display:ruby-base-group;",
-// "d:rbt": "display:ruby-text;",
-// "d:rbtg": "display:ruby-text-group;",
+// d b -> display block
+// d n -> display none
+// d b -> display block
+// d i -> display inline
+// d ib -> display inline-block
+// d li -> display list-item
+// d ri -> display run-in
+// d cp -> display compact
+// d tb -> display table
+// d itb -> display inline-table
+// d tbcp -> display table-caption
+// d tbcl -> display table-column
+// d tbclg -> display table-column-group
+// d tbhg -> display table-header-group
+// d tbfg -> display table-footer-group
+// d tbr -> display table-row
+// d tbrg -> display table-row-group
+// d tbc -> display table-cell
+// d rb -> display ruby
+// d rbb -> display ruby-base
+// d rbbg -> display ruby-base-group
+// d rbt -> display ruby-text
+// d rbtg -> display ruby-text-group
 d(v)
 	if v == b
 		display block
@@ -612,20 +766,22 @@ d(v)
 		display inline
 	else if v == n
 		display none
+	else if v == t
+		display table
 	else if v == box
 		// Firefox
-		display -moz-box 
+		display -moz-box
 		// Safari, Opera, and Chrome
 		display -webkit-box
 		// W3C
-		display box 
+		display box
 	else
 		display v
 
 // float
-// "fl:l": "float:left;",
-// "fl:r": "float:right;",
-// "fl:n": "float:none;",
+// fl l -> float left
+// fl r -> float right
+// fl n -> float none
 fl(v)
 	if v == l
 		float left
@@ -636,14 +792,6 @@ fl(v)
 	else
 		float v
 
-// overflow
-ov(v)
-	if v == h 
-		overflow hidden
-	else
-		overflow v
-
-// position
 
 // left
 l(v)
@@ -678,24 +826,25 @@ b(v)
 		bottom unit(v, unit)
 
 // visibility
-// "v:v": "visibility:visible;",
-// "v:h": "visibility:hidden;",
-// "v:c": "visibility:collapse;",
-v(val, im = '')
+// v v -> visibility visible
+// v h -> visibility hidden
+// v c -> visibility collapse
+v($v, im = '')
 	im = im == i ? !important :
 
-	if val == v
+	if $v == v
 		visibility visible im
-	else if val == h
+	else if $v == h
 		visibility hidden im
-	else if val == c
+	else if $v == c
 		visibility collapse im
 	else
-		visibility val im
+		visibility $v im
 
 // z-index
-// "z": "z-index:|;",
-// "z:a": "z-index:auto;",
+// z 1000 -> z-index 1000
+// z 1000 i -> z-index 1000 !important
+// z a -> z-index auto
 z(v, im = '')
 	im = im == i ? !important :
 	if v == a
@@ -703,13 +852,209 @@ z(v, im = '')
 	else
 		z-index v
 
+/*
+ * --------------------------------------------------------------------
+ * Print
+ * --------------------------------------------------------------------
+ */
+
+// orphans
+// page-break-after
+// page-break-before
+// page-break-inside
+// widows
+
+/*
+ * --------------------------------------------------------------------
+ * Ruby
+ * --------------------------------------------------------------------
+ */
+
+// ruby-align
+// ruby-overhang
+// ruby-position
+// ruby-span
+
+/*
+ * --------------------------------------------------------------------
+ * Speech
+ * --------------------------------------------------------------------
+ */
+
+// mark
+// mark-after
+// mark-before
+// phonemes
+// rest
+// rest-after
+// rest-before
+// voice-balance
+// voice-duration
+// voice-pitch
+// voice-pitch-range
+// voice-rate
+// voice-stress
+// voice-volume
+
+/*
+ * --------------------------------------------------------------------
+ * Table
+ * --------------------------------------------------------------------
+ */
+
+// border-collapse
+// border-spacing
+// caption-side
+// empty-cells
+// table-layout
+
+ /*
+ * --------------------------------------------------------------------
+ * Text
+ * --------------------------------------------------------------------
+ */
+
+// color
+c($v)
+	color $v
+
+// direction
+di($v)
+	direction $V
+
+// letter-spacing
+ls($v)
+	letter-spacing $v
+
+// text-align
+ta($v)
+	if $v == l
+		text-align left
+	else if $v == r
+		text-align right
+	else if $v == c
+		text-align center
+	else
+		text-align $v
+
+// text-decoration
+td($v)
+	if $v == n
+		text-decoration none
+	else if $v == u
+		text-decoration underline
+	else if $v == o
+		text-decoration overline
+	else if $v == l
+		text-decoration line-through
+	else
+		text-decoration $v
+
+// line-height
+lh($v)
+	if $v == i
+		line-height inherit
+	else
+		line-height $v
+
+// text-indent
+ti($v)
+	text-indent $v
+
+// text-transform
+tt($v)
+	if $v == u
+		text-transform uppercase
+	else if $v == l
+		text-transform lowercase
+	else
+		text-transform $v
+
+// unicode-bidi
+
+// vertical-align
+va($v)
+	if $v == t
+		vertical-align top
+	else if $v == m
+		vertical-align middle
+	else if $v == b
+		vertical-align bottom
+	else
+		vertical-align $v
+
+// white-space
+ws($v)
+	white-space $v
+
+// word-spacing
+wos($v)
+	word-spacing $v
+
+// hanging-punctuation
+// punctuation-trim
+// text-justify
+// text-outline
+// text-overflow
+
+// text-shadow
+tsh($v)
+	text-shadow $v
+
+// text-wrap
+
+// word-break
+wb($v)
+	word-break $v
+
+// word-wrap
+ww($v)
+	word-wrap $v
 
 
-// Print
-// Ruby
-// Speech
-// Table
-// Text
-// 2D/3D Transform
-// Transition
-// User-interface
+/*
+ * --------------------------------------------------------------------
+ * 2D/3D Transform
+ * --------------------------------------------------------------------
+ */
+
+// transform
+// transform-origin
+// transform-style
+// perspective
+// perspective-origin
+// backface-visibility
+
+
+/*
+ * --------------------------------------------------------------------
+ * Transition
+ * --------------------------------------------------------------------
+ */
+
+// transition
+tra(v)
+	transition v
+// transition-property
+// transition-duration
+// transition-timing-function
+// transition-delay
+
+/*
+ * --------------------------------------------------------------------
+ * User-interface
+ * --------------------------------------------------------------------
+ */
+
+// appearance
+// box-sizing
+// icon
+// nav-down
+// nav-index
+// nav-left
+// nav-right
+// nav-up
+// outline-offset
+// resize
+
+
