@@ -80,18 +80,15 @@
  */
 
 // animation
-an(v)
-	animation v
-
- // @keyframes
- // animation
- // animation-name
- // animation-duration
- // animation-timing-function
- // animation-delay
- // animation-iteration-count
- // animation-direction
- // animation-play-state
+// @keyframes
+// animation
+// animation-name
+// animation-duration
+// animation-timing-function
+// animation-delay
+// animation-iteration-count
+// animation-direction
+// animation-play-state
 
 /*
  * --------------------------------------------------------------------
@@ -100,38 +97,62 @@ an(v)
  */
 
 // background
-bg(v)
-if v == a
-	background auto
-else if v == t
-	background transparent
-else if v == n
-	background none
-else
-	background v
+bg($v...)
+	if $v == a
+		background auto
+	else if $v == t
+		background transparent
+	else if $v == i
+			background inherit
+	else if $v == n
+		background none
+	else
+		background $v
 
 // background-image
-bgi(v)
-if v == n
-	background-image none
-else
-	background-image url(v)
+bgi($v...)
+	if $v == n
+		background-image none
+	else if $v == i
+		background inherit
+	else
+		background-image $v
 
 // background-repeat
-bgr(v)
-background-repeat v
+bgr($v)
+	if $v == x
+		background-repeat repeat-x
+	else if $v == y
+		background-repeat repeat-y
+	else if $v == n
+		background-repeat no-repeat
+	else if $v == r
+		background-repeat repeat
+	else if $v == i
+		background-repeat inherit
+	else
+		background-repeat $v
 
 // background-color
-bgc(v, im = '')
-im = im == i ? !important :
-if v == t
-	background transparent im
-else
-	background-color v im
+bgc($v, im = '')
+	im = im == i ? !important : null
+	if $v == t
+		background transparent im
+	else if $v == i
+		background inherit im
+	else
+		background-color $v im
 
 // background-size
-bgz(v)
-background-size v
+bgz($v...)
+	if $v == cv
+		background-size cover
+	else if $v == ct
+		background-size contain
+	else if $v == a
+		background-size auto
+	else
+		background-size $v
 
 
 /*
@@ -141,39 +162,39 @@ background-size v
  */
 
 // border
-bd(v)
-	if v == n
+bd($v...)
+	if $v == n
 		border none
 	else
-		border v
+		border $v
 
 // border-top
-bdt(v)
-	border-top v
+bdt($v)
+	border-top $v
 
 // border-right
-bdr(v)
-	border-right v
+bdr($v)
+	border-right $v
 
 // border-left
-bdl(v)
-	border-left v
+bdl($v)
+	border-left $v
 
 // border-bottom
-bdb(v)
-	border-bottom v
+bdb($v)
+	border-bottom $v
 
 // border-color
-bdc(v)
-	border-color v
+bdc($v)
+	border-color $v
 
 // border-radius
-bdrz(v)
-	border-radius v
+bdrz($v)
+	border-radius $v
 
 // box-shadow
-bs(v)
-	box-shadow v
+bs($v)
+	box-shadow $v
 
 
 /*
@@ -183,13 +204,13 @@ bs(v)
  */
 
 // overflow
-ov(v)
-	if v == h
+ov($v)
+	if $v == h
 		overflow hidden
-	else if v == v
+	else if $v == v
 		overflow visible
 	else
-		overflow v
+		overflow $v
 // overflow-x
 // overflow-y
 // overflow-style
@@ -203,8 +224,8 @@ ov(v)
  */
 
 // opacity
-op(v)
-	opacity v
+op($v)
+	opacity $v
 
 // color-profile
 // rendering-intent
@@ -237,87 +258,87 @@ op(v)
  */
 
 // height
-h(v)
-	if v == n
+h($v)
+	if $v == n
 		height none
 
-	else if v == a
+	else if $v == a
 		height auto
 
-	else if v == i
+	else if $v == i
 		height inherit
 
 	else
-		unit = unit(v) == '' ? 'px' : unit(v)
-		height unit(v, unit)
+		unit = unit($v) == '' ? 'px' : unit($v)
+		height unit($v, unit)
 
 // min-height
-mih(v)
-	if v == n
+mih($v)
+	if $v == n
 		min-height none
 
-	else if v == a
+	else if $v == a
 		min-height auto
 
-	else if v == i
+	else if $v == i
 		min-height inherit
 
 	else
-		unit = unit(v) == '' ? 'px' : unit(v)
-		min-height unit(v, unit)
+		unit = unit($v) == '' ? 'px' : unit($v)
+		min-height unit($v, unit)
 
 // max-height
-mah(v)
-	if v == n
+mah($v)
+	if $v == n
 		max-height none
 
-	else if v == a
+	else if $v == a
 		max-height auto
 
-	else if v == i
+	else if $v == i
 		max-height inherit
 
 	else
-		unit = unit(v) == '' ? 'px' : unit(v)
-		max-height unit(v, unit)
+		unit = unit($v) == '' ? 'px' : unit($v)
+		max-height unit($v, unit)
 
 // width
-w(v)
-	if v == n
+w($v)
+	if $v == n
 		width none
 
-	else if v == a
+	else if $v == a
 		width auto
 
 	else
-		unit = unit(v) == '' ? 'px' : unit(v)
-		width unit(v, unit)
+		unit = unit($v) == '' ? 'px' : unit($v)
+		width unit($v, unit)
 
 // min-width
-miw(v)
-	if v == none
+miw($v)
+	if $v == none
 		min-width none
 
-	else if v == a
+	else if $v == a
 		min-width auto
 		maw
 
 	else
-		unit = unit(v) == '' ? 'px' : unit(v)
-		min-width unit(v, unit)
+		unit = unit($v) == '' ? 'px' : unit($v)
+		min-width unit($v, unit)
 
 // max-width
-maw(v)
-	if v == n
+maw($v)
+	if $v == n
 		max-width none
 
-	else if v == a
+	else if $v == a
 		max-width auto
 		maw
 
 	else
-		unit = unit(v) == '' ? 'px' : unit(v)
-		max-width unit(v, unit)
+		unit = unit($v) == '' ? 'px' : unit($v)
+		max-width unit($v, unit)
 
 
 // Mixin: Size
@@ -362,25 +383,25 @@ size(numbers...)
  */
 
 // font
-f(v)
-	font v
+f($v)
+	font $v
 
 // font-family
-ff(v)
-	font-family v
+ff($v)
+	font-family $v
 
 // font-weight
-fw(v)
-	font-weight v
+fw($v)
+	font-weight $v
 
 // font-style
-fs(v)
-	if v == i
+fs($v)
+	if $v == i
 		font-style i
-	else if v == n
+	else if $v == n
 		font-style normal
 	else
-		font-style v
+		font-style $v
 
 // font-variant
 // @font-face
@@ -388,8 +409,8 @@ fs(v)
 // font-stretch
 
 // font-size
-fz(v)
-	font-size v
+fz($v)
+	font-size $v
 
 /*
  * --------------------------------------------------------------------
@@ -457,11 +478,11 @@ con($v)
  */
 
 // list-style
-lis(v)
-	if v == n
+lis($v)
+	if $v == n
 		list-style none
 	else
-		list-style v
+		list-style $v
 
 // list-style-image
 // list-style-position
@@ -515,24 +536,24 @@ m(numbers...)
 // mb 10% // margin-bottom 10%
 
 // margin-top
-mt(v)
-	unit = unit(v) == '' ? 'px' : unit(v)
-	margin-top unit(v, unit)
+mt($v)
+	unit = unit($v) == '' ? 'px' : unit($v)
+	margin-top unit($v, unit)
 
 // margin-right
-mr(v)
-	unit = unit(v) == '' ? 'px' : unit(v)
-	margin-right unit(v, unit)
+mr($v)
+	unit = unit($v) == '' ? 'px' : unit($v)
+	margin-right unit($v, unit)
 
 // margin-bottom
-mb(v)
-	unit = unit(v) == '' ? 'px' : unit(v)
-	margin-bottom unit(v, unit)
+mb($v)
+	unit = unit($v) == '' ? 'px' : unit($v)
+	margin-bottom unit($v, unit)
 
 // margin-left
-ml(v)
-	unit = unit(v) == '' ? 'px' : unit(v)
-	margin-left unit(v, unit)
+ml($v)
+	unit = unit($v) == '' ? 'px' : unit($v)
+	margin-left unit($v, unit)
 
 /*
  * --------------------------------------------------------------------
@@ -611,24 +632,24 @@ p(numbers...)
 // pb 10% // padding-bottom 10%
 
 // padding-top
-pt(v)
-	unit = unit(v) == '' ? 'px' : unit(v)
-	padding-top unit(v, unit)
+pt($v)
+	unit = unit($v) == '' ? 'px' : unit($v)
+	padding-top unit($v, unit)
 
 // padding-right
-pr(v)
-	unit = unit(v) == '' ? 'px' : unit(v)
-	padding-right unit(v, unit)
+pr($v)
+	unit = unit($v) == '' ? 'px' : unit($v)
+	padding-right unit($v, unit)
 
 // padding-bottom
-pb(v)
-	unit = unit(v) == '' ? 'px' : unit(v)
-	padding-bottom unit(v, unit)
+pb($v)
+	unit = unit($v) == '' ? 'px' : unit($v)
+	padding-bottom unit($v, unit)
 
 // padding-left
-pl(v)
-	unit = unit(v) == '' ? 'px' : unit(v)
-	padding-left unit(v, unit)
+pl($v)
+	unit = unit($v) == '' ? 'px' : unit($v)
+	padding-left unit($v, unit)
 
 /*
  * --------------------------------------------------------------------
@@ -667,42 +688,42 @@ pl(v)
 // pos a -> position absolute
 // pos f -> position fixed
 // pos s -> position static
-pos(v)
-	if v == r
+pos($v)
+	if $v == r
 		position relative
-	else if v == a
+	else if $v == a
 		position absolute
-	else if v == f
+	else if $v == f
 		position fixed
-	else if v == s
+	else if $v == s
 		position static
 	else
-		position v
+		position $v
 
 // clear
 // cl b -> clear both
 // cl n -> clear none
 // cl l -> clear left
 // cl r -> clear right
-cl(v)
-	if v == b
+cl($v)
+	if $v == b
 		clear both
-	else if v == n
+	else if $v == n
 		clear none
-	else if v == l
+	else if $v == l
 		clear left
-	else if v == r
+	else if $v == r
 		clear right
 	else
-		clear v
+		clear $v
 
 // clip
 // cp a -> clip auto
-cp(v)
-	if v == a
+cp($v)
+	if $v == a
 		clip auto
 	else
-		clip v
+		clip $v
 
 // cursor
 // cur a -> cursor auto
@@ -713,25 +734,25 @@ cp(v)
 // cur he -> cursor help
 // cur m -> cursor move
 // cur t -> cursor text
-cur(v)
-	if v == p
+cur($v)
+	if $v == p
 		cursor pointer
-	else if v == a
+	else if $v == a
 		cursor auto
-	else if v == d
+	else if $v == d
 		cursor default
-	else if v == c
+	else if $v == c
 		cursor crosshair
-	else if v == ha
+	else if $v == ha
 		cursor hand
-	else if v == he
+	else if $v == he
 		cursor help
-	else if v == m
+	else if $v == m
 		cursor move
-	else if v == t
+	else if $v == t
 		cursor text
 	else
-		cursor v
+		cursor $v
 
 // display
 // d b -> display block
@@ -757,18 +778,18 @@ cur(v)
 // d rbbg -> display ruby-base-group
 // d rbt -> display ruby-text
 // d rbtg -> display ruby-text-group
-d(v)
-	if v == b
+d($v)
+	if $v == b
 		display block
-	else if v == ib
+	else if $v == ib
 		display inline-block
-	else if v == i
+	else if $v == i
 		display inline
-	else if v == n
+	else if $v == n
 		display none
-	else if v == t
+	else if $v == t
 		display table
-	else if v == box
+	else if $v == box
 		// Firefox
 		display -moz-box
 		// Safari, Opera, and Chrome
@@ -776,61 +797,61 @@ d(v)
 		// W3C
 		display box
 	else
-		display v
+		display $v
 
 // float
 // fl l -> float left
 // fl r -> float right
 // fl n -> float none
-fl(v)
-	if v == l
+fl($v)
+	if $v == l
 		float left
-	else if v == r
+	else if $v == r
 		float right
-	else if v == n
+	else if $v == n
 		float none
 	else
-		float v
+		float $v
 
 
 // left
-l(v)
-	if v == a
+l($v)
+	if $v == a
 		left auto
 	else
-		unit = unit(v) == '' ? 'px' : unit(v)
-		left unit(v, unit)
+		unit = unit($v) == '' ? 'px' : unit($v)
+		left unit($v, unit)
 
 // right
-r(v)
-	if v == a
+r($v)
+	if $v == a
 		right auto
 	else
-		unit = unit(v) == '' ? 'px' : unit(v)
-		right unit(v, unit)
+		unit = unit($v) == '' ? 'px' : unit($v)
+		right unit($v, unit)
 
 // top
-t(v)
-	if v == a
+t($v)
+	if $v == a
 		top auto
 	else
-		unit = unit(v) == '' ? 'px' : unit(v)
-		top unit(v, unit)
+		unit = unit($v) == '' ? 'px' : unit($v)
+		top unit($v, unit)
 
 // bottom
-b(v)
-	if v == a
+b($v)
+	if $v == a
 		bottom auto
 	else
-		unit = unit(v) == '' ? 'px' : unit(v)
-		bottom unit(v, unit)
+		unit = unit($v) == '' ? 'px' : unit($v)
+		bottom unit($v, unit)
 
 // visibility
 // v v -> visibility visible
 // v h -> visibility hidden
 // v c -> visibility collapse
 v($v, im = '')
-	im = im == i ? !important :
+	im = im == i ? !important : null
 
 	if $v == v
 		visibility visible im
@@ -845,12 +866,13 @@ v($v, im = '')
 // z 1000 -> z-index 1000
 // z 1000 i -> z-index 1000 !important
 // z a -> z-index auto
-z(v, im = '')
-	im = im == i ? !important :
-	if v == a
+z($v, im = '')
+	im = im == i ? !important : null
+
+	if $v == a
 		z-index auto im
 	else
-		z-index v
+		z-index $v im
 
 /*
  * --------------------------------------------------------------------
@@ -1033,8 +1055,8 @@ ww($v)
  */
 
 // transition
-tra(v)
-	transition v
+tra($v)
+	transition $v
 // transition-property
 // transition-duration
 // transition-timing-function

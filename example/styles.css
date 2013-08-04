@@ -1,0 +1,28 @@
+.class {
+  background: url("image.jpg") no-repeat;
+  background: #f00;
+  background: transparent;
+  background: none;
+  background: inherit;
+  background-image: url("hola.jpg");
+  background: inherit;
+  background-image: none;
+  background-repeat: repeat-x;
+  background-repeat: repeat-y;
+  background-repeat: no-repeat;
+  background-repeat: repeat;
+  background-repeat: inherit;
+  background-repeat: no-repeat;
+  background: transparent;
+  background-color: #f0f;
+  background-color: #f00;
+  background: inherit;
+  background-size: cover;
+  background-size: contain;
+  background-size: auto;
+  background-size: 50%;
+  background-size: 50% 50%;
+  background-size: 100px 100px;
+  border: 1px solid #808080;
+  border: none;
+}
